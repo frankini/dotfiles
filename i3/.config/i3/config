@@ -1,0 +1,178 @@
+# i3 config file
+
+### Constants ###
+  set $mod Mod4
+  set $font pango:System San Francisco Display
+
+# Workspace Names
+  set $workspace1  "1: Main"
+  set $workspace2  "2: Web"
+  set $workspace3  "3: Chats"
+  set $workspace4  "4: Email"
+  set $workspace5  5
+  set $workspace6  6
+  set $workspace7  7
+  set $workspace8  8
+  set $workspace9  9
+  set $workspace10 "10: Music"
+
+# Colors
+  set $base00 #101218
+  set $base01 #1f222d
+  set $base02 #252936
+  set $base03 #7780a1
+  set $base04 #C0C5CE
+  set $base05 #d1d4e0
+  set $base06 #C9CCDB
+  set $base07 #ffffff
+  set $base08 #ee829f
+  set $base09 #f99170
+  set $base0A #ffefcc
+  set $base0B #a5ffe1
+  set $base0C #97e0ff
+  set $base0D #97bbf7
+  set $base0E #c0b7f9
+  set $base0F #fcc09e
+
+
+### General Options ###
+font $font 8
+floating_modifier $mod
+focus_follows_mouse no
+mouse_warping none
+
+
+### Bindings ###
+
+# Windows
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# Workspace
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
+bindsym $mod+Shift+q kill
+
+# Launch Programs
+bindsym $mod+d exec rofi -show run
+bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+b exec chromium --force-device-scale-factor=1.5
+bindsym $mod+m exec google-chrome --force-device-scale-factor=1.5 app=http://music.google.com
+
+
+# split in vertical orientation
+bindsym $mod+v split toggle 
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+
+# Program Workspaces
+assign [instance="crx_knipolnnllmklapflnccelgolnpehhpl"] $workspace3
+assign [instance="music.google.com"] $workspace10
+assign [class="google-chrome"] $workspace2
+assign [class="chromium"] $workspace2
+
+# Media Keys
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+
+# Floating
+for_window [class="Lxappearance"] floating enable
+
+# Resize Window
+mode "  " {
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+r mode "  "
+
+# Set shut down, restart and locking features
+set $mode_system (L) Lock, (E) Logout, (Shift + S) Suspend, (H) Hibernate, (R) Reboot, (S) Shut down
+
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym e exec --no-startup-id i3exit logout, mode "default"
+    bindsym Shift+s exec --no-startup-id i3exit suspend, mode "default"
+    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindsym s exec --no-startup-id i3exit shutdown, mode "default"
+
+    # Back to normal : "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+ }
+
+bindsym $mod+Shift+e mode "$mode_system"
+
+# Widow Colours
+#                         border  background text    indicator
+  client.focused          $base01 $base01    $base07 $base0F
+  client.focused_inactive $base02 $base02    $base03 $base0F
+  client.unfocused        $base02 $base02    $base03 $base0F
+  client.urgent           $base02 $base08    $base00 $base0F
+
+# Bar Options
+bar {
+  font $font, FontAwesome 8
+  status_command i3blocks -c ~/.config/i3/i3blocks.conf
+  strip_workspace_numbers yes
+  position top
+  colors {
+  separator $base03
+  background $base01
+  statusline $base05
+  #                        border  background text
+  focused_workspace  $base01 $base01    $base07
+  active_workspace   $base01 $base02    $base03
+  inactive_workspace $base01 $base01    $base03
+  urgent_workspace   $base01 $base01    $base08
+  }
+}
