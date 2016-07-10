@@ -1,17 +1,22 @@
 URxvt.scrollBar:            off
 URxvt.font:                 xft:monospace:regular:size=8 
 URxvt.boldFont:             xft:monospace:bold:size=8
-!URxvt.perl-ext:             default,url-select,keyboard-select,clipboard
+URxvt.letterSpace:          1
+
+URxvt.perl-ext:             default,url-select,keyboard-select,clipboard
 URxvt.keysym.M-u:           perl:url-select:select_next
 URxvt.keysym.M-Escape:      perl:keyboard-select:activate
 URxvt.keysym.M-s:           perl:keyboard-select:search
 URxvt.keysym.M-c:           perl:clipboard:copy
 URxvt.keysym.M-v:           perl:clipboard:paste
 URxvt.keysym.M-C-v:         perl:clipboard:paste_escaped
+
 URxvt.url-select.launcher:  /usr/bin/google-chrome-stable
+
 URxvt.url-select.underline: false
 URxvt.clipboard.copycmd:    xclip -i -sel c
 URxvt.clipboard.pastecmd:   xclip -o -sel c
+
 URxvt.depth:                32
 URxvt.transparent:          false
 

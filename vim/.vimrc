@@ -8,6 +8,8 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'xolox/vim-notes'
+Plug 'xolox/vim-misc'
 call plug#end()
 
 set nocompatible                " no vi compatibility
