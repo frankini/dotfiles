@@ -162,9 +162,10 @@ bindsym $mod+Shift+e mode "$mode_system"
 # Bar Options
 bar {
   font $font, FontAwesome 8
-  status_command i3blocks -c ~/.config/i3/i3blocks.conf
+  status_command py3status -c ~/.config/i3status/$(hostname).conf
   strip_workspace_numbers yes
   position top
+  separator_symbol " "
   colors {
   separator $base03
   background $base01
