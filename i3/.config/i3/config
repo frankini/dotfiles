@@ -80,8 +80,7 @@ bindsym $mod+Shift+q kill
 # Launch Programs
 bindsym $mod+d exec rofi -show run
 bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+b exec chromium --force-device-scale-factor=1.5
-bindsym $mod+m exec google-chrome --force-device-scale-factor=1.5 app=http://music.google.com
+bindsym $mod+b exec browser
 
 
 # split in vertical orientation
@@ -112,9 +111,13 @@ bindsym $mod+Shift+r restart
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 
 # Floating
 for_window [class="Lxappearance"] floating enable
+for_window [class="Solaar"] floating enable
+
 
 # Resize Window
 mode "  " {

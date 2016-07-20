@@ -1,0 +1,12 @@
+#!/bin/bash
+
+dpi=$(xdpyinfo | grep resolution | awk 'split($2, arr, "x") { print arr[1]}')
+
+if [ $dpi -gt 96 ]
+then
+  chromium --force-device-scale-factor=1.5 $1
+else
+  exec "chromium" "$@"
+fi
+
+
