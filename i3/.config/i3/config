@@ -118,6 +118,8 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 for_window [class="Lxappearance"] floating enable
 for_window [class="Solaar"] floating enable
 for_window [class="Pavucontrol"] floating enable
+for_window [class="processing-app-Base"] floating enable
+for_window [class="Gimp"] floating enable
 
 
 # Resize Window
