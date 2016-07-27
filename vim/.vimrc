@@ -43,6 +43,8 @@ set exrc                        " use local rc files
 syntax on                       " lovely syntax highlighting
 filetype plugin indent on       " important
 
+colorscheme eighties
+
 " Show shitty characters
 set list listchars=tab:▸\ ,nbsp:˽,trail:⋅
 

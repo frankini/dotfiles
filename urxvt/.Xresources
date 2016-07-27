@@ -20,40 +20,40 @@ URxvt.clipboard.pastecmd:   xclip -o -sel c
 URxvt.depth:                32
 URxvt.transparent:          false
 
-! Base16 Ocean
+! Base16 Eighties
 ! Scheme: Chris Kempson (http://chriskempson.com)
 
-URxvt*background:                     #2b303b
-URxvt*foreground:                     #c0c5ce
-URxvt*cursorColor:                    #c0c5ce
+URxvt*background:                     #2d2d2d
+URxvt*foreground:                     #d3d0c8
+URxvt*cursorColor:                    #d3d0c8
 
-URxvt*scrollColor:                    #c0c5ce
-URxvt*highlightColor:                 #4f5b66
-URxvt*highlightTextColor:             #a7adba
+URxvt*scrollColor:                    #d3d0c8
+URxvt*highlightColor:                 #515151
+URxvt*highlightTextColor:             #a09f93
 
-URxvt*color0:                         #2b303b
-URxvt*color1:                         #bf616a
-URxvt*color2:                         #a3be8c
-URxvt*color3:                         #ebcb8b
-URxvt*color4:                         #8fa1b3
-URxvt*color5:                         #b48ead
-URxvt*color6:                         #96b5b4
-URxvt*color7:                         #c0c5ce
-URxvt*color8:                         #65737e
-URxvt*color9:                         #bf616a
-URxvt*color10:                        #a3be8c
-URxvt*color11:                        #ebcb8b
-URxvt*color12:                        #8fa1b3
-URxvt*color13:                        #b48ead
-URxvt*color14:                        #96b5b4
-URxvt*color15:                        #eff1f5
+URxvt*color0:                         #2d2d2d
+URxvt*color1:                         #f2777a
+URxvt*color2:                         #99cc99
+URxvt*color3:                         #ffcc66
+URxvt*color4:                         #6699cc
+URxvt*color5:                         #cc99cc
+URxvt*color6:                         #66cccc
+URxvt*color7:                         #d3d0c8
+URxvt*color8:                         #747369
+URxvt*color9:                         #f2777a
+URxvt*color10:                        #99cc99
+URxvt*color11:                        #ffcc66
+URxvt*color12:                        #6699cc
+URxvt*color13:                        #cc99cc
+URxvt*color14:                        #66cccc
+URxvt*color15:                        #f2f0ec
 
-URxvt*color16:                        #d08770
-URxvt*color17:                        #ab7967
-URxvt*color18:                        #343d46
-URxvt*color19:                        #4f5b66
-URxvt*color20:                        #a7adba
-URxvt*color21:                        #dfe1e8
+URxvt*color16:                        #f99157
+URxvt*color17:                        #d27b53
+URxvt*color18:                        #393939
+URxvt*color19:                        #515151
+URxvt*color20:                        #a09f93
+URxvt*color21:                        #e8e6df
 
 
 URxvt.internalBorder:      0
